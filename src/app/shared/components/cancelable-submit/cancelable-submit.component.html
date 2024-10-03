@@ -1,0 +1,16 @@
+@if (submitInProcess) {
+  <button class="btn btn-secondary" (click)="onCancel()">
+    Cancel
+  </button>
+  <strong class="ms-2">
+    {{countdown$ | async}}
+  </strong>
+} 
+@else {
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid || form.pending">
+    Submit
+  </button>
+  @if (invalidFormsCount) {
+    Invalid Forms: {{invalidFormsCount}}
+  }
+}

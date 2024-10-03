@@ -2,3 +2,34 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+.tooltip-host {
+  position: relative;
+
+  &::before {
+    content: attr(data-message);
+    position: absolute;
+    bottom: -15px;
+    left: 3px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    color: red;
+  }
+
+  &::after {
+    content: '❗';
+    position: absolute;
+    right: 15px;
+    bottom: 50%;
+    transform: translateY(50%);
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    color: red;
+  }
+
+  input {
+    border-color: red;
+  }
+}
